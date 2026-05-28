@@ -1,5 +1,5 @@
 # Lead Management — Mini CRM
-A lightweight CRM for capturing leads, tracking their source and status, and managing your sales pipeline. Built with **React 19 + TanStack Start + Tailwind CSS + shadcn/ui**, backed by **Supabase (PostgreSQL)** via Lovable Cloud.
+A lightweight CRM for capturing leads, tracking their source and status, and managing your sales pipeline. Built with **React 19 + Node.js + Tailwind CSS + shadcn/ui**, backed by **Supabase (PostgreSQL)**.
 ---
 ## Features
 - **Add leads** — capture name, phone, and source (Call / WhatsApp / Field)
