@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -15,8 +15,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
-import { Trash2, Users, Phone, Search, TrendingUp, CheckCircle2 } from "lucide-react";
-
+import { Trash2, Users, Phone, Search, TrendingUp, CheckCircle2, LayoutDashboard } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -140,18 +139,27 @@ function LeadsPage() {
       <Toaster richColors position="top-right" />
 
       <header className="border-b border-border bg-card">
-        <div className="mx-auto max-w-6xl px-6 py-8">
-          <div className="flex items-center gap-3">
-            <div
-              className="flex h-11 w-11 items-center justify-center rounded-xl text-primary-foreground"
-              style={{ background: "var(--gradient-hero)" }}
+        <div className="mx-auto max-w-6xl px-6 py-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-3">
+              <div
+                className="flex h-11 w-11 items-center justify-center rounded-xl text-primary-foreground"
+                style={{ background: "var(--gradient-hero)" }}
+              >
+                <Users className="h-5 w-5" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-semibold tracking-tight">Lead Management</h1>
+                <p className="text-sm text-muted-foreground">Mini CRM · capture, track, convert</p>
+              </div>
+            </div>
+            <Link
+              to="/dashboard"
+              className="inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
             >
-              <Users className="h-5 w-5" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-semibold tracking-tight">Lead Management</h1>
-              <p className="text-sm text-muted-foreground">Mini CRM · capture, track, convert</p>
-            </div>
+              <LayoutDashboard className="h-4 w-4" />
+              Dashboard
+            </Link>
           </div>
         </div>
       </header>
